@@ -1,0 +1,243 @@
+:root {
+    --primary-color: #ff477e;
+    --primary-light: #ff7096;
+    --primary-dark: #f0255b;
+    --secondary-color: #f8cdda;
+    --bg-color: #fdfafb;
+    --text-dark: #2b2d42;
+    --text-light: #8d99ae;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+/* Typography & Colors */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 71, 126, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-maroon {
+    background-color: #730909 !important;
+    border-bottom: 3px solid #a01010;
+}
+
+.navbar-maroon .nav-link {
+    color: #fff !important;
+}
+
+.navbar-maroon .nav-link:hover {
+    color: #f8cdda !important;
+}
+
+/* Custom Nav Buttons for Public & Consistent Pages */
+.nav-btn-custom {
+    background-color:  #ae3939 !important;
+    color: rgb(248, 247, 247) !important;
+    padding: 8px 18px !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.nav-btn-custom:hover,
+.nav-btn-custom.active {
+    background-color: #db5959 !important;
+    transform: translateY(-2px);
+    color: rgb(252, 251, 251) !important;
+    box-shadow: 0 4px 12px rgba(174, 57, 57, 0.2);
+}
+
+.nav-btn-custom.active {
+    border: 2px solid #730909;
+}
+
+
+/* Dropdown Styling */
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 10px !important;
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: #ae3939;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #ae3939;
+    color: white;
+    transform: translateX(5px);
+}
+
+.dropdown-item.active {
+    background-color: #730909;
+    color: white;
+}
+
+.dropdown-toggle::after {
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.transition-up {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.transition-up:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #fff5f7 0%, #fff 100%);
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.blob-bg {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: var(--secondary-color);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: -1;
+    opacity: 0.6;
+    animation: blobMorph 8s infinite alternate ease-in-out;
+}
+
+@keyframes blobMorph {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 50% 40% 50%;
+    }
+}
+
+/* Feature Cards */
+.feature-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white !important;
+}
+
+/* Calendar & Dashboard Tweaks */
+.calendar-day {
+    min-height: 100px;
+    border: 1px solid #eee;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.calendar-day:hover {
+    background: #f8f9fa;
+}
+
+.day-period {
+    background-color: rgba(255, 71, 126, 0.15);
+    border-left: 3px solid var(--primary-color);
+}
+
+.day-ovulation {
+    background-color: rgba(142, 68, 173, 0.1);
+    border-left: 3px solid #8e44ad;
+}
+
+.day-today {
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+}
+
+.symptom-badge {
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.25rem rgba(255, 71, 126, 0.25);
+}
+
+/* Auth Cards */
+.auth-card {
+    max-width: 450px;
+    margin: 100px auto;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
